@@ -1,6 +1,7 @@
 #!/system/bin/sh
 #Softkey Rotation helper script
 #By St.Matt
+#By mmontuori
 
 if [ $1 -eq 1 ] #lights in landscape
 then
@@ -15,5 +16,11 @@ else #lights in portrait
         echo $brightness > /sys/class/leds/button-backlight-portrait/brightness
         echo 0 > /sys/class/leds/button-backlight-landscape/brightness
     fi
+fi
+
+if [ "$2" != "" ] && [ $2 -eq 1 ]
+then
+        echo 0 > /sys/class/leds/button-backlight-portrait/brightness
+        echo 0 > /sys/class/leds/button-backlight-landscape/brightness
 fi
 
