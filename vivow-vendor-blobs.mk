@@ -49,4 +49,4 @@ PRODUCT_COPY_FILES += \
     vendor/htc/vivow/proprietary/libreference-ril.so:/system/lib/libreference-ril.so \
     vendor/htc/vivow/proprietary/libril_ims.so:/system/lib/libreference-ril.so \
     vendor/htc/vivow/proprietary/libril.so:/system/lib/libril.so \
-    vendor/htc/vivow/proprietary/rotate_lights.sh:/system/etc/rotate_lights.sh
+    vendor/htc/vivow/proprietary/rotate_lights.sh:/system/xbin/rotate_lights.sh
