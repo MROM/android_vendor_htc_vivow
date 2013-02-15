@@ -1,0 +1,27 @@
+#!/system/xbin/bash
+
+curr_user=`whoami`
+file=/system/xbin/rotate_lights.sh
+
+if [ "$curr_user" != "root" ]; then
+	echo "this script can only be executed as 'root'"
+	exit 1
+fi
+
+if ! mount -o rw,remount /system; then
+	echo "error mounting /system rw"
+	exit 1
+fi
+
+echo "disabling rotate lights..."
+mv ${file} ${file}.disabled
+
+sync
+sync
+sync
+
+if ! mount -o ro,remount /system; then
+	echo "error mounting /system ro"
+	exit 1
+fi
+
